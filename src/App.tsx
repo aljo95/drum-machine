@@ -47,8 +47,15 @@ function App(): JSX.Element {
 
 
   const onKeydown = (event: KeyboardEvent): void => {
-    //need to check if event.key is Q/W/E/A/S/D/Z/X/C ONLY!
+
     if (idToSound.hasOwnProperty(event.key)) {
+      //(document.getElementById(event.key+event.key) as HTMLElement).click();
+      /*
+      let btn = (document.getElementById(event.key+event.key) as HTMLButtonElement);
+      console.log(btn);
+      btn
+      .classList.add('drum-padhehe');
+      */
       (document.getElementById(event.key) as HTMLAudioElement).play();
       (document.getElementById(event.key) as HTMLAudioElement).currentTime = 0;
     };
@@ -56,7 +63,6 @@ function App(): JSX.Element {
   }
 
 
-  //for clicking on buttons
   const playSound = (event: React.MouseEvent<HTMLButtonElement>): void => {
     id = (event.target as HTMLElement).innerText;
     (document.getElementById(id) as HTMLAudioElement).play();
@@ -70,20 +76,13 @@ function App(): JSX.Element {
     setTimeout(() => {
       setDisplayText("");
     }, 1000);
+    
   };
 
 
   const powerHandler = (): void => {
-/*
-    let nodelist = (document.querySelectorAll('.drum-pad') as NodeList);//.setAttribute("disabled", "");
-    (nodelist[1] as HTMLElement).setAttribute('disabled', '');
-*/
-    setPwrButtonState(!pwrButtonState);
-    if (pwrButtonState) {
-      setPwrButtonStyle(undefined);
-    } else {
-      setPwrButtonStyle(disabledStyle);
-    }
+    setPwrButtonState(!pwrButtonState
+    );
   };
 
 
@@ -106,7 +105,7 @@ function App(): JSX.Element {
 
 
   return (
-    <div id="drum-machine">
+    <div id="drum-machine" data-testid="parent">
 
         <BtnsAudio 
           soundFunc = {playSound}

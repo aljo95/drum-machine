@@ -96,6 +96,10 @@ html, body {
   margin: 0 2px 0 2px;
 
 }
+.drum-padhehe {
+  background-color: red;
+  color: red;
+}
 
 .drum-pad:hover:not([disabled]) {
   background-color: darkgray;

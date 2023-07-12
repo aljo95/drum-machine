@@ -12,41 +12,43 @@ interface BtnsAudioProps {
 const BtnsAudio:React.FC<BtnsAudioProps> = ({ soundFunc, pwrState }): JSX.Element => {
     
     return(
-        <div id="button-container">
-            <button className="drum-pad" id="heater1" onClick={soundFunc} disabled={pwrState}>Q
-                <audio src="Heater-1.mp3" className='clip' id="Q"></audio>
-            </button>
+        <div id="button-container" data-testid="child1">
+            <button className="drum-pad" id="QQ" onClick={soundFunc} disabled={pwrState}>Q
             
-            <button className="drum-pad" id="heater2" onClick={soundFunc} disabled={pwrState}>W
-                <audio src="Heater-2.mp3" className='clip' id="W"></audio>
+                <audio src="sounds\Heater-1.mp3" className='clip' id="Q" muted={pwrState}></audio>
+
+            </button>
+           
+            <button className="drum-pad" id="WW" onClick={soundFunc} disabled={pwrState}>W
+                <audio src="sounds\Heater-2.mp3" className='clip' id="W" muted={pwrState}></audio>
             </button>
 
             <button className="drum-pad" id="heater3" onClick={soundFunc} disabled={pwrState}>E
-                <audio src="Heater-3.mp3" className="clip" id="E"></audio>
+                <audio src="sounds\Heater-3.mp3" className="clip" id="E" muted={pwrState}></audio>
             </button>
 
             <button className="drum-pad" id="heater4" onClick={soundFunc} disabled={pwrState}>A
-                <audio src="Heater-4.mp3" className="clip" id="A"></audio>
+                <audio src="sounds\Heater-4.mp3" className="clip" id="A" muted={pwrState}></audio>
             </button>
 
             <button className="drum-pad" id="clap" onClick={soundFunc} disabled={pwrState}>S
-                <audio src="clap.mp3" className="clip" id="S"></audio>
+                <audio src="sounds\clap.mp3" className="clip" id="S" muted={pwrState}></audio>
             </button>
 
             <button className="drum-pad" id="open-hh" onClick={soundFunc} disabled={pwrState}>D
-                <audio src="Open-HH.mp3" className="clip" id="D"></audio>
+                <audio src="sounds\Open-HH.mp3" className="clip" id="D" muted={pwrState}></audio>
             </button>
 
             <button className="drum-pad" id="kick-n-hat" onClick={soundFunc} disabled={pwrState}>Z
-                <audio src="Kick_n_Hat.mp3" className="clip" id="Z"></audio>
+                <audio src="sounds\Kick_n_Hat.mp3" className="clip" id="Z" muted={pwrState}></audio>
             </button>
 
             <button className="drum-pad" id="kick" onClick={soundFunc} disabled={pwrState}>X
-                <audio src="Kick.mp3" className="clip" id="X"></audio>
+                <audio src="sounds\Kick.mp3" className="clip" id="X" muted={pwrState}></audio>
             </button>
 
             <button className="drum-pad" id="closed-hh" onClick={soundFunc} disabled={pwrState}>C
-                <audio src="Closed-HH.mp3" className="clip" id="C"></audio>
+                <audio src="sounds\Closed-HH.mp3" className="clip" id="C" muted={pwrState}></audio>
             </button>
         </div>
     );

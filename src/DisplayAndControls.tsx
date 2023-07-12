@@ -16,8 +16,12 @@ const DisplayAndControls =
 ({displayText, volumeLevel, volumeHandler, pwrButtonState, pwrButtonStyle, powerHandler}: DisplayAndControlProps) => {
 
     return (
-        <div id="second-container">
-            <div id="display">{displayText}</div>
+        <div id="second-container" data-testid="child2">
+            { !pwrButtonState ? 
+                <div id="display">{displayText}</div>
+            :
+                <div id="display"></div>
+            }
             <label id="volume-lbl">volume</label>
             <input type="range" id="volume" value={volumeLevel} onChange={volumeHandler} disabled={pwrButtonState}></input>
             <button id="pwr-btn" style={pwrButtonStyle} onClick={powerHandler}>POWER</button>
