@@ -96,23 +96,14 @@ html, body {
   margin: 0 2px 0 2px;
 
 }
-.drum-padhehe {
-  background-color: red;
-  color: red;
-}
 
 .drum-pad:hover:not([disabled]) {
   background-color: darkgray;
 }
-.drum-pad:active:not([disabled]) {
+.drum-pad:active:not([disabled]), .drum-pad-keydown {
   box-shadow: 2px 2px;
-  transform: translate(2px, 2px)
+  transform: translate(2px, 2px);
 }
-
-
-
-
-
 
 input[type=range]{
   -webkit-appearance: none;

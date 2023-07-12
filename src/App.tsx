@@ -49,13 +49,17 @@ function App(): JSX.Element {
   const onKeydown = (event: KeyboardEvent): void => {
 
     if (idToSound.hasOwnProperty(event.key)) {
-      //(document.getElementById(event.key+event.key) as HTMLElement).click();
-      /*
+      
+      //CHECK IF BUTTONS DISABLED OR NOT
+
       let btn = (document.getElementById(event.key+event.key) as HTMLButtonElement);
-      console.log(btn);
-      btn
-      .classList.add('drum-padhehe');
-      */
+      if (btn.disabled === false) {
+        btn.classList.add('drum-pad-keydown')
+        setTimeout(() => {
+          btn.classList.remove('drum-pad-keydown');
+        }, 100);
+      }
+
       (document.getElementById(event.key) as HTMLAudioElement).play();
       (document.getElementById(event.key) as HTMLAudioElement).currentTime = 0;
     };
